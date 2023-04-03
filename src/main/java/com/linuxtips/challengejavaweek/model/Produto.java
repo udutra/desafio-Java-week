@@ -7,6 +7,16 @@ import jakarta.persistence.*;
 @Table(name = "produto")
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false)
+    private Double preco;
+
     public Long getId() {
         return id;
     }
@@ -30,16 +40,6 @@ public class Produto {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false)
-    private String nome;
-
-    @Column(nullable = false)
-    private Double preco;
 
 
 }

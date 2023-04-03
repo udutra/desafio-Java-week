@@ -3,6 +3,7 @@ package com.linuxtips.challengejavaweek.service;
 
 import com.linuxtips.challengejavaweek.model.Produto;
 import com.linuxtips.challengejavaweek.repository.ProdutoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,11 @@ import java.util.List;
 @Service
 public class ProdutoService {
 
+    private final ProdutoRepository produtoRepository;
+
     public ProdutoService(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
     }
-
-    private ProdutoRepository produtoRepository;
-
-
 
     public Produto criarProduto (Produto produto){
         return produtoRepository.save(produto);
